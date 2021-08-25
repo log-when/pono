@@ -9,7 +9,7 @@ mkdir -p $DEPS
 
 if [ ! -d "$DEPS/btor2tools" ]; then
     cd $DEPS
-    git clone --depth 1 https://github.com/Boolector/btor2tools.git btor2tools
+    git clone --depth 1 git://github.com/Boolector/btor2tools.git btor2tools
     cd btor2tools
     git checkout -f $BTOR2TOOLS_VERSION
     CFLAGS="-fPIC" ./configure.sh --static
