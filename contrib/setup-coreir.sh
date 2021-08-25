@@ -41,7 +41,7 @@ mkdir -p $DEPS
 
 if [ ! -d "$DEPS/coreir" ]; then
     cd $DEPS
-    git clone https://github.com/rdaly525/coreir.git
+    git clone git://github.com/rdaly525/coreir.git
     cd coreir
     git checkout -f $COREIR_VERSION
     mkdir build
@@ -51,7 +51,7 @@ if [ ! -d "$DEPS/coreir" ]; then
     make install
     if [[ "$ENABLE_PYTHON" != default ]]; then
         echo "Pip installing coreir Python bindings"
-        git clone https://github.com/leonardt/pycoreir.git
+        git clone git://github.com/leonardt/pycoreir.git
         cd pycoreir
         export PATH=$PATH:$DEPS/coreir/local/bin
         which -a coreir
